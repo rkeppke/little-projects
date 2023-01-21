@@ -1,4 +1,6 @@
 let clickCount = 0;
+let background;
+let disappearButton;
 
 //makes sure page is loaded first to avoid problems
 window.addEventListener("load", function(){
@@ -19,26 +21,26 @@ window.addEventListener("load", function(){
         }
         else {
         //creates new background
-        let background = document.createElement("div"); //created div
+        background = document.createElement("div"); //created div
         background.classList.add("background"); //added "background" class
         document.body.appendChild(background); //appends to body element
 
         //creates new button
-        let disappearButton = document.createElement("button"); 
+        disappearButton = document.createElement("button"); 
         disappearButton.classList.add("disappear-button");
         disappearButton.innerHTML = "make this box dissapear"; //creates button txt
         background.appendChild(disappearButton);
 
         this.style.display = "none"; // hiding the original button
 
-        removeBox = function() {
-            background.remove();
-            disappearButton.remove();
-            document.querySelector(".button1").style.display = "block";
-          }
-        
         disappearButton.addEventListener("click", removeBox);
         }
     });
 });
+
+function removeBox () {
+    background.remove();
+    disappearButton.remove();
+    document.querySelector(".button1").style.display = "block";
+  }
 
