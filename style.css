@@ -11,6 +11,7 @@ body {
     background-color: #c5c9cf;
     width: 400px;
     height: 400px;
+    border-radius: 15px;
 }
 
 h1 {
@@ -23,4 +24,5 @@ h1 {
     width: 200px;
     height: 100px;
     color: rgb(18, 18, 116);
+    border-radius: 15px;
 }
