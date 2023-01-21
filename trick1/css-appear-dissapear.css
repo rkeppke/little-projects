@@ -21,3 +21,9 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  .text {
+    font-weight: 900;
+    font-size: larger;
+    color: brown;
+  }
