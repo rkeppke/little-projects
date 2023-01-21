@@ -20,6 +20,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('./trick1/penguin.png');
+    background-size: contain; /* This will make the image fit within the width and height limits */
   }
 
   .text {

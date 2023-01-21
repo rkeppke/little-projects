@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
         background = document.createElement("div"); //created div
         background.classList.add("background"); //added "background" class
         document.body.appendChild(background); //appends to body element
-
+        
         //creates new button
         disappearButton = document.createElement("button"); 
         disappearButton.classList.add("disappear-button");
