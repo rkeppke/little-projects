@@ -43,4 +43,3 @@ function removeBox () {
     disappearButton.remove();
     document.querySelector(".button1").style.display = "block";
   }
-
