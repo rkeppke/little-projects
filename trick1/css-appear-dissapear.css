@@ -1,7 +1,9 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: #90a2bd;
+    height: 100vh;
+    background: url(./Sea-bg.jpg) no-repeat;
+    background-size: cover;
     align-items: center;
     justify-content: center;
 }
