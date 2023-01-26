@@ -9,7 +9,12 @@ body {
 }
 
 .button0{
-    margin: 20px;
+  margin: 20px;
+  background-color: rgb(190, 190, 13);
+  border-radius: 15px;
+  padding: 5px;
+  border-color: #fff;
+  border-width: 2px;
 }
 
 .background {
