@@ -19,13 +19,13 @@ let tPoints = 0;
 let playerChoice = 0;
 let computerChoice = 0;
 
-//this refreshes the page back to welcome mode
+//first function, this refreshes the page into welcome mode
 function welcome (){
     //hide buttons, scorebox and final message
     playbox.style.display = 'none';
     score.style.display = 'none';
     finalMessage.style.display = 'none';
-    scoreMessage.style.display = 'none';
+    scoreMessage.innerHTML = '';
     again.style.display = 'none';
 
     //shows start button
@@ -53,7 +53,7 @@ function initiateGame(){
 
 }
 
-//function check's game ending conditions and execute it
+//function check's game ending conditions and execute/displays it
 function checkEndGame() {
     //player won
     if(wPoints == 3)
@@ -118,7 +118,10 @@ welcome();
 //beginning
 startGame.addEventListener('click',initiateGame);
 //play game
-rock.addEventListener('click', () => rollUpdate(0));
+//this is a very important way of setting an event, it allows to
+//call a function in a specific way after a button was clicked with the
+//() => notation
+rock.addEventListener('click', () => rollUpdate(0)); 
 paper.addEventListener('click', () => rollUpdate(1));
 scissor.addEventListener('click', () => rollUpdate(2));
 //restart option
