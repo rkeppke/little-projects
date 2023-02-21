@@ -88,7 +88,8 @@ function rollUpdate(playerChoice){
     {
         tPoints++;
         tie.innerText = `${tPoints} tie(s)`;
-        scoreMessage.innerText = 'It\'s a draw! Play again!';
+        scoreMessage.innerText = 'It\'s a draw!';
+        scoreMessage.style.backgroundColor = 'rgb(255, 255, 255)';
     } // player wins
     else if (
         playerChoice == 0 && computerChoice == 2 ||
@@ -97,12 +98,14 @@ function rollUpdate(playerChoice){
     {
         wPoints++;
         win.innerText = `${wPoints} won`;
-        scoreMessage.innerText = 'You win!';
+        scoreMessage.innerText = 'Your round!';
+        scoreMessage.style.backgroundColor = 'rgb(165, 221, 92)';
     } //player loses
     else {
         lPoints++;
         lose.innerText = `${lPoints} lost`;
-        scoreMessage.innerText = 'Oh no! You lost!';
+        scoreMessage.innerText = 'Lost this round!';
+        scoreMessage.style.backgroundColor = 'rgb(216, 138, 138)';
     }
 
     checkEndGame();

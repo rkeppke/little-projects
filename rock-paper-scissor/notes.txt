@@ -1,4 +1,83 @@
-I gotta comment later on so I can understand from zero how tf 
-I came up with shit
+chat gpt advice
 
-good coments done
+----------- HTML -----------
+<div class="battle">
+  <img src="player_choice.png" class="player-choice">
+  <img src="computer_choice.png" class="computer-choice hidden">
+  <div class="result-message hidden">You Win!</div>
+</div>
+
+--------------- CSS ---------------
+.battle {
+  position: relative;
+  height: 400px;
+}
+
+.player-choice,
+.computer-choice {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.player-choice {
+  animation-name: player-choice-drop;
+  animation-delay: 0s;
+}
+
+.computer-choice {
+  animation-name: computer-choice-drop;
+  animation-delay: 1s;
+}
+
+.result-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes player-choice-drop {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: calc(50% - 100px);
+  }
+}
+
+@keyframes computer-choice-drop {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: calc(100% - 200px);
+  }
+}
+
+-------------JS --------------------
+const playerChoice = document.querySelector('.player-choice');
+const computerChoice = document.querySelector('.computer-choice');
+const resultMessage = document.querySelector('.result-message');
+
+computerChoice.addEventListener('animationend', function() {
+  playerChoice.style.animationName = '';
+  computerChoice.style.animationName = '';
+  resultMessage.classList.remove('hidden');
+});
+
+playerChoice.addEventListener('click', function() {
+  const choices = ['rock', 'paper', 'scissors'];
+  const computerChoiceIndex = Math.floor(Math.random() * choices.length);
+  const computerChoiceName = choices[computerChoiceIndex];
+  computerChoice.src = computerChoiceName + '_choice.png';
+  playerChoice.style.animationName = 'player-choice-drop';
+  computerChoice.style.animationName = 'computer-choice-drop';
+  resultMessage.classList.add('hidden');
+});
