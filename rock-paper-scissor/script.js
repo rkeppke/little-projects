@@ -62,6 +62,7 @@ function checkEndGame() {
         playbox.style.display = 'none';
         //final message and play again button
         finalMessage.style.display = 'block';
+        finalMessage.style.backgroundColor = 'rgb(165, 221, 92)';
         finalMessage.innerText = 'Congratulations! You won the game!';
         again.style.display = 'block';
 
@@ -72,6 +73,7 @@ function checkEndGame() {
         playbox.style.display = 'none';
         //final message and play again button
         finalMessage.style.display = 'block';
+        finalMessage.style.backgroundColor = 'rgb(216, 138, 138)';
         finalMessage.innerText = 'Too bad! The computer won this time!';
         again.style.display = 'block';
     }
